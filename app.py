@@ -6,9 +6,7 @@ import signal
 import sys
 import pyaudio
 from six.moves import queue
-
 import re
-
 from google.cloud import speech
 
 
@@ -177,17 +175,7 @@ def startFfmpegSubProcess(rtmpUrl, outputPipe):
   subprocess.call('ffmpeg -i '+rtmpUrl+' -vn -c:a pcm_s16le -ar 16000 -ac 1 -y -f s16le -hide_banner -loglevel error '+outputPipe+' &', shell=True)
   #subprocess.call('ffmpeg -i '+rtmpUrl+' -vn -c:a pcm_s16le -ar 16000 -ac 1 -y -loglevel debug  -f wav '+outputPipe+' &', shell=True)
 
-
-# def signal_handler(sig, frame):
-#     print('Pressed Ctrl+C!')
-#     sys.exit(0)
-
-
 if __name__ == "__main__":
-#   print('Press Ctrl+C to Exit')
-
-#   signal.signal(signal.SIGINT, signal_handler)
-
   mode = False
   if(os.path.exists('rtmpOutputPipe')):
     mode = os.stat('rtmpOutputPipe').st_mode
