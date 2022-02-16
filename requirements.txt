@@ -1,3 +1,3 @@
-pyaudio
-six
+pyaudio==0.2.11
+six==1.16.0
 google-cloud-speech==2.12.0
