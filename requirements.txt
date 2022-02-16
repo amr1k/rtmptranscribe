@@ -1,0 +1,3 @@
+pyaudio
+six
+google-cloud-speech==2.12.0
